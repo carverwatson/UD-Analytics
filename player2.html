@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Analytics - Jane Smith</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-blue-600 text-white py-6 text-center">
+        <h1 class="text-3xl font-bold">Player Analytics: Jane Smith</h1>
+        <p class="text-lg mt-2">Advanced Game Score and Season Tracking</p>
+    </header>
+    <main class="max-w-4xl mx-auto py-8 px-4">
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Input Game Statistics</h2>
+            <form id="statsForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700">Game Date (YYYY-MM-DD):</label>
+                    <input type="date" id="gameDate" class="w-full p-2 border rounded" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Team Played (Opponent):</label>
+                    <input type="text" id="teamPlayed" class="w-full p-2 border rounded" placeholder="e.g., Tampa Bay Lightning" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Opponent Goal Differential (Season):</label>
+                    <input type="number" id="opponentGD" class="w-full p-2 border rounded" step="1" placeholder="e.g., 20" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Player Role:</label>
+                    <select id="playerRole" class="w-full p-2 border rounded" required>
+                        <option value="forward">Forward</option>
+                        <option value="defenseman">Defenseman</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700">1st Period Goal Differential (Team - Opponent):</label>
+                    <input type="number" id="period1GD" class="w-full p-2 border rounded" step="1" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">2nd Period Goal Differential (Cumulative):</label>
+                    <input type="number" id="period2GD" class="w-full p-2 border rounded" step="1" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">3rd Period Goal Differential (Cumulative):</label>
+                    <input type="number" id="period3GD" class="w-full p-2 border rounded" step="1" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Goals:</label>
+                    <input type="number" id="goals" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Primary Assists:</label>
+                    <input type="number" id="primaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Secondary Assists:</label>
+                    <input type="number" id="secondaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Time on Ice (minutes):</label>
+                    <input type="number" id="toi" class="w-full p-2 border rounded" min="0" step="0.1" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Blocked Shots:</label>
+                    <input type="number" id="blocks" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Takeaways:</label>
+                    <input type="number" id="takeaways" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Hits:</label>
+                    <input type="number" id="hits" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Faceoff Wins:</label>
+                    <input type="number" id="faceoffWins" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Penalties Drawn:</label>
+                    <input type="number" id="penaltiesDrawn" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Penalties Taken:</label>
+                    <input type="number" id="penaltiesTaken" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shot Attempts (Corsi):</label>
+                    <input type="number" id="shotAttempts" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shots on Net:</label>
+                    <input type="number" id="shotsOnNet" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">High-Danger Shots:</label>
+                    <input type="number" id="highDangerShots" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shot Attempts Against (Corsi):</label>
+                    <input type="number" id="shotAttemptsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shots on Net Against:</label>
+                    <input type="number" id="shotsOnNetAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">High-Danger Shots Against:</label>
+                    <input type="number" id="highDangerShotsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Add Game</button>
+            </form>
+        </section>
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-semibold mb-4">Game History</h2>
+            <table id="gameTable" class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border p-2">Date</th>
+                        <th class="border p-2">Opponent</th>
+                        <th class="border p-2">Game Score</th>
+                        <th class="border p-2">Game Score/60</th>
+                        <th class="border p-2">xG%</th>
+                    </tr>
+                </thead>
+                <tbody id="gameTableBody"></tbody>
+            </table>
+            <h3 class="text-xl font-semibold mt-6">Season Averages</h3>
+            <p id="seasonGameScore" class="text-gray-700"></p>
+            <p id="seasonGameScorePer60" class="text-gray-700"></p>
+            <p id="seasonXGPercent" class="text-gray-700"></p>
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>Contact: <a href="mailto:carver.watson@gmail.com" class="hover:underline">carver.watson@gmail.com</a> | (920) 287-4014</p>
+        <p><a href="https://linkedin.com/in/carverwatson" target="_blank" class="hover:underline">LinkedIn Profile</a></p>
+    </footer>
+    <script>
+        const playerId = 'player2'; // Change to 'player2' for player2.html, etc.
+        const playerName = 'Jane Smith'; // Change to 'Jane Smith' for player2.html, etc.
+
+        function calculateXG(shotAttempts, shotsOnNet, highDangerShots) {
+            return (0.1 * shotAttempts) + (0.3 * shotsOnNet) + (0.7 * highDangerShots);
+        }
+
+        function calculateGameScore(stats) {
+            console.log('Calculating Game Score for:', stats);
+            // Base Score
+            const baseScore = (2 * stats.goals) + (1 * stats.primaryAssists) + (0.5 * stats.secondaryAssists) +
+                              (0.5 * stats.blocks) + (0.5 * stats.takeaways) + (0.2 * stats.hits) +
+                              (0.1 * stats.faceoffWins) + (0.5 * stats.penaltiesDrawn) - (0.5 * stats.penaltiesTaken) +
+                              (0.3 * stats.xGFor) - (0.3 * stats.xGAgainst) + 0.2;
+
+            // Contextual Adjustments
+            let clutchMultiplier = 1.0;
+            const isCloseGame = Math.abs(stats.period1GD) <= 1 || Math.abs(stats.period2GD) <= 1 || Math.abs(stats.period3GD) <= 1;
+            const isBlowout = Math.abs(stats.period1GD) >= 3 || Math.abs(stats.period2GD) >= 3 || Math.abs(stats.period3GD) >= 3;
+            const periodWeight = stats.period3GD !== 0 ? 0.2 : (stats.period2GD !== 0 ? 0.1 : 0);
+            clutchMultiplier += (0.2 * periodWeight) + (isCloseGame ? 0.3 : 0) - (isBlowout ? 0.2 : 0);
+
+            const opponentMultiplier = 1.0 + (stats.opponentGD / 50);
+
+            let roleMultiplier = 1.0;
+            if (stats.playerRole === 'defenseman') {
+                roleMultiplier += 0.2; // Boost for blocks, takeaways, xG Against
+            } else if (stats.playerRole === 'forward') {
+                roleMultiplier += 0.1; // Boost for goals, assists, xG For
+            }
+
+            // Efficiency Multiplier
+            const expectedBaseScore = stats.playerRole === 'defenseman' ? (stats.toi > 15 ? 1.2 : 0.8) : (stats.toi > 15 ? 1.5 : 1.0);
+            const toiAdjusted = stats.toi < 5 ? 5 : stats.toi; // Avoid division issues
+            const efficiencyMultiplier = (baseScore / expectedBaseScore) * (60 / toiAdjusted);
+
+            const gameScore = (baseScore * clutchMultiplier * opponentMultiplier * roleMultiplier * efficiencyMultiplier).toFixed(2);
+            console.log('Game Score:', gameScore);
+            return gameScore;
+        }
+
+        function calculateMetrics(stats) {
+            const gameScorePer60 = calculateGameScore(stats);
+            const xGPercent = (stats.xGFor + stats.xGAgainst) > 0 ? ((stats.xGFor / (stats.xGFor + stats.xGAgainst)) * 100).toFixed(1) : 0;
+            console.log('Metrics:', { gameScorePer60, xGPercent });
+            return { gameScorePer60, xGPercent };
+        }
+
+        function saveGameData() {
+            const stats = {
+                date: document.getElementById('gameDate').value,
+                teamPlayed: document.getElementById('teamPlayed').value,
+                opponentGD: parseInt(document.getElementById('opponentGD').value) || 0,
+                playerRole: document.getElementById('playerRole').value,
+                period1GD: parseInt(document.getElementById('period1GD').value) || 0,
+                period2GD: parseInt(document.getElementById('period2GD').value) || 0,
+                period3GD: parseInt(document.getElementById('period3GD').value) || 0,
+                goals: parseInt(document.getElementById('goals').value) || 0,
+                primaryAssists: parseInt(document.getElementById('primaryAssists').value) || 0,
+                secondaryAssists: parseInt(document.getElementById('secondaryAssists').value) || 0,
+                toi: parseFloat(document.getElementById('toi').value) || 0,
+                blocks: parseInt(document.getElementById('blocks').value) || 0,
+                takeaways: parseInt(document.getElementById('takeaways').value) || 0,
+                hits: parseInt(document.getElementById('hits').value) || 0,
+                faceoffWins: parseInt(document.getElementById('faceoffWins').value) || 0,
+                penaltiesDrawn: parseInt(document.getElementById('penaltiesDrawn').value) || 0,
+                penaltiesTaken: parseInt(document.getElementById('penaltiesTaken').value) || 0,
+                shotAttempts: parseInt(document.getElementById('shotAttempts').value) || 0,
+                shotsOnNet: parseInt(document.getElementById('shotsOnNet').value) || 0,
+                highDangerShots: parseInt(document.getElementById('highDangerShots').value) || 0,
+                shotAttemptsAgainst: parseInt(document.getElementById('shotAttemptsAgainst').value) || 0,
+                shotsOnNetAgainst: parseInt(document.getElementById('shotsOnNetAgainst').value) || 0,
+                highDangerShotsAgainst: parseInt(document.getElementById('highDangerShotsAgainst').value) || 0,
+                xGFor: calculateXG(
+                    parseInt(document.getElementById('shotAttempts').value) || 0,
+                    parseInt(document.getElementById('shotsOnNet').value) || 0,
+                    parseInt(document.getElementById('highDangerShots').value) || 0
+                ),
+                xGAgainst: calculateXG(
+                    parseInt(document.getElementById('shotAttemptsAgainst').value) || 0,
+                    parseInt(document.getElementById('shotsOnNetAgainst').value) || 0,
+                    parseInt(document.getElementById('highDangerShotsAgainst').value) || 0
+                )
+            };
+            console.log('Saving game data:', stats);
+            try {
+                const games = JSON.parse(localStorage.getItem(playerId) || '[]');
+                games.push(stats);
+                localStorage.setItem(playerId, JSON.stringify(games));
+                console.log('Data saved for player:', playerId);
+            } catch (e) {
+                console.error('Error saving to localStorage:', e);
+                alert('Failed to save game data. Please try again.');
+            }
+        }
+
+        function loadPlayerData() {
+            console.log('Loading data for player:', playerId);
+            let games;
+            try {
+                games = JSON.parse(localStorage.getItem(playerId) || '[]');
+            } catch (e) {
+                console.error('Error loading from localStorage:', e);
+                games = [];
+            }
+            console.log('Loaded games:', games);
+            const tableBody = document.getElementById('gameTableBody');
+            tableBody.innerHTML = '';
+            let totalGameScore = 0, totalGameScorePer60 = 0, totalXGPercent = 0;
+            games.forEach(game => {
+                const gameScore = calculateGameScore(game);
+                const metrics = calculateMetrics(game);
+                const row = `<tr>
+                    <td class="border p-2">${game.date}</td>
+                    <td class="border p-2">${game.teamPlayed}</td>
+                    <td class="border p-2">${gameScore}</td>
+                    <td class="border p-2">${metrics.gameScorePer60}</td>
+                    <td class="border p-2">${metrics.xGPercent}%</td>
+                </tr>`;
+                tableBody.insertAdjacentHTML('beforeend', row);
+                totalGameScore += parseFloat(gameScore);
+                totalGameScorePer60 += parseFloat(metrics.gameScorePer60);
+                totalXGPercent += parseFloat(metrics.xGPercent);
+            });
+            const gameCount = games.length;
+            document.getElementById('seasonGameScore').textContent = `Average Game Score: ${gameCount > 0 ? (totalGameScore / gameCount).toFixed(2) : 0}`;
+            document.getElementById('seasonGameScorePer60').textContent = `Average Game Score per 60: ${gameCount > 0 ? (totalGameScorePer60 / gameCount).toFixed(2) : 0}`;
+            document.getElementById('seasonXGPercent').textContent = `Average xG%: ${gameCount > 0 ? (totalXGPercent / gameCount).toFixed(1) : 0}%`;
+        }
+
+        document.getElementById('statsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Form submitted');
+            saveGameData();
+            loadPlayerData();
+            document.getElementById('statsForm').reset();
+        });
+
+        // Load data on page load
+        loadPlayerData();
+    </script>
+</body>
+</html>
