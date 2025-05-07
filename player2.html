@@ -34,81 +34,248 @@
                         <option value="defenseman">Defenseman</option>
                     </select>
                 </div>
+                <h3 class="text-xl font-semibold mt-6">1st Period Stats</h3>
                 <div>
-                    <label class="block text-gray-700">1st Period Goal Differential (Team - Opponent):</label>
+                    <label class="block text-gray-700">Goal Differential (Team - Opponent):</label>
                     <input type="number" id="period1GD" class="w-full p-2 border rounded" step="1" value="0" required>
                 </div>
                 <div>
-                    <label class="block text-gray-700">2nd Period Goal Differential (Cumulative):</label>
-                    <input type="number" id="period2GD" class="w-full p-2 border rounded" step="1" value="0" required>
-                </div>
-                <div>
-                    <label class="block text-gray-700">3rd Period Goal Differential (Cumulative):</label>
-                    <input type="number" id="period3GD" class="w-full p-2 border rounded" step="1" value="0" required>
-                </div>
-                <div>
-                    <label class="block text-gray-700">Goals:</label>
-                    <input type="number" id="goals" class="w-full p-2 border rounded" min="0" value="0" required>
-                </div>
-                <div>
-                    <label class="block text-gray-700">Primary Assists:</label>
-                    <input type="number" id="primaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
-                </div>
-                <div>
-                    <label class="block text-gray-700">Secondary Assists:</label>
-                    <input type="number" id="secondaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <label class="block text-gray-700">Critical Moment? (e.g., final 2 min, close game):</label>
+                    <input type="checkbox" id="period1Critical" class="p-2">
                 </div>
                 <div>
                     <label class="block text-gray-700">Time on Ice (minutes):</label>
-                    <input type="number" id="toi" class="w-full p-2 border rounded" min="0" step="0.1" value="0" required>
+                    <input type="number" id="period1TOI" class="w-full p-2 border rounded" min="0" step="0.1" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Goals:</label>
+                    <input type="number" id="period1Goals" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Primary Assists:</label>
+                    <input type="number" id="period1PrimaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Secondary Assists:</label>
+                    <input type="number" id="period1SecondaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Blocked Shots:</label>
-                    <input type="number" id="blocks" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1Blocks" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Takeaways:</label>
-                    <input type="number" id="takeaways" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1Takeaways" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Hits:</label>
-                    <input type="number" id="hits" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1Hits" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Faceoff Wins:</label>
-                    <input type="number" id="faceoffWins" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1FaceoffWins" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Penalties Drawn:</label>
-                    <input type="number" id="penaltiesDrawn" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1PenaltiesDrawn" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Penalties Taken:</label>
-                    <input type="number" id="penaltiesTaken" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1PenaltiesTaken" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Shot Attempts (Corsi):</label>
-                    <input type="number" id="shotAttempts" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1ShotAttempts" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Shots on Net:</label>
-                    <input type="number" id="shotsOnNet" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1ShotsOnNet" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">High-Danger Shots:</label>
-                    <input type="number" id="highDangerShots" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1HighDangerShots" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Shot Attempts Against (Corsi):</label>
-                    <input type="number" id="shotAttemptsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1ShotAttemptsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Shots on Net Against:</label>
-                    <input type="number" id="shotsOnNetAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1ShotsOnNetAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">High-Danger Shots Against:</label>
-                    <input type="number" id="highDangerShotsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                    <input type="number" id="period1HighDangerShotsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Controlled Entries (Forwards):</label>
+                    <input type="number" id="period1Entries" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Controlled Exits (Defensemen):</label>
+                    <input type="number" id="period1Exits" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <h3 class="text-xl font-semibold mt-6">2nd Period Stats</h3>
+                <div>
+                    <label class="block text-gray-700">Goal Differential (Team - Opponent):</label>
+                    <input type="number" id="period2GD" class="w-full p-2 border rounded" step="1" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Critical Moment? (e.g., final 2 min, close game):</label>
+                    <input type="checkbox" id="period2Critical" class="p-2">
+                </div>
+                <div>
+                    <label class="block text-gray-700">Time on Ice (minutes):</label>
+                    <input type="number" id="period2TOI" class="w-full p-2 border rounded" min="0" step="0.1" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Goals:</label>
+                    <input type="number" id="period2Goals" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Primary Assists:</label>
+                    <input type="number" id="period2PrimaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Secondary Assists:</label>
+                    <input type="number" id="period2SecondaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Blocked Shots:</label>
+                    <input type="number" id="period2Blocks" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Takeaways:</label>
+                    <input type="number" id="period2Takeaways" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Hits:</label>
+                    <input type="number" id="period2Hits" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Faceoff Wins:</label>
+                    <input type="number" id="period2FaceoffWins" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Penalties Drawn:</label>
+                    <input type="number" id="period2PenaltiesDrawn" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Penalties Taken:</label>
+                    <input type="number" id="period2PenaltiesTaken" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shot Attempts (Corsi):</label>
+                    <input type="number" id="period2ShotAttempts" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shots on Net:</label>
+                    <input type="number" id="period2ShotsOnNet" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">High-Danger Shots:</label>
+                    <input type="number" id="period2HighDangerShots" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shot Attempts Against (Corsi):</label>
+                    <input type="number" id="period2ShotAttemptsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shots on Net Against:</label>
+                    <input type="number" id="period2ShotsOnNetAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">High-Danger Shots Against:</label>
+                    <input type="number" id="period2HighDangerShotsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Controlled Entries (Forwards):</label>
+                    <input type="number" id="period2Entries" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Controlled Exits (Defensemen):</label>
+                    <input type="number" id="period2Exits" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <h3 class="text-xl font-semibold mt-6">3rd Period/OT Stats</h3>
+                <div>
+                    <label class="block text-gray-700">Goal Differential (Team - Opponent):</label>
+                    <input type="number" id="period3GD" class="w-full p-2 border rounded" step="1" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Critical Moment? (e.g., final 2 min, close game):</label>
+                    <input type="checkbox" id="period3Critical" class="p-2">
+                </div>
+                <div>
+                    <label class="block text-gray-700">Time on Ice (minutes):</label>
+                    <input type="number" id="period3TOI" class="w-full p-2 border rounded" min="0" step="0.1" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Goals:</label>
+                    <input type="number" id="period3Goals" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Primary Assists:</label>
+                    <input type="number" id="period3PrimaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Secondary Assists:</label>
+                    <input type="number" id="period3SecondaryAssists" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Blocked Shots:</label>
+                    <input type="number" id="period3Blocks" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Takeaways:</label>
+                    <input type="number" id="period3Takeaways" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Hits:</label>
+                    <input type="number" id="period3Hits" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Faceoff Wins:</label>
+                    <input type="number" id="period3FaceoffWins" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Penalties Drawn:</label>
+                    <input type="number" id="period3PenaltiesDrawn" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Penalties Taken:</label>
+                    <input type="number" id="period3PenaltiesTaken" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shot Attempts (Corsi):</label>
+                    <input type="number" id="period3ShotAttempts" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shots on Net:</label>
+                    <input type="number" id="period3ShotsOnNet" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">High-Danger Shots:</label>
+                    <input type="number" id="period3HighDangerShots" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shot Attempts Against (Corsi):</label>
+                    <input type="number" id="period3ShotAttemptsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Shots on Net Against:</label>
+                    <input type="number" id="period3ShotsOnNetAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">High-Danger Shots Against:</label>
+                    <input type="number" id="period3HighDangerShotsAgainst" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Controlled Entries (Forwards):</label>
+                    <input type="number" id="period3Entries" class="w-full p-2 border rounded" min="0" value="0" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Controlled Exits (Defensemen):</label>
+                    <input type="number" id="period3Exits" class="w-full p-2 border rounded" min="0" value="0" required>
                 </div>
                 <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Add Game</button>
             </form>
@@ -145,43 +312,115 @@
             return (0.1 * shotAttempts) + (0.3 * shotsOnNet) + (0.7 * highDangerShots);
         }
 
-        function calculateGameScore(stats) {
-            console.log('Calculating Game Score for:', stats);
+        function calculatePeriodScore(periodStats, periodNumber) {
+            console.log(`Calculating Period ${periodNumber} Score for:`, periodStats);
             // Base Score
-            const baseScore = (2 * stats.goals) + (1 * stats.primaryAssists) + (0.5 * stats.secondaryAssists) +
-                              (0.5 * stats.blocks) + (0.5 * stats.takeaways) + (0.2 * stats.hits) +
-                              (0.1 * stats.faceoffWins) + (0.5 * stats.penaltiesDrawn) - (0.5 * stats.penaltiesTaken) +
-                              (0.3 * stats.xGFor) - (0.3 * stats.xGAgainst) + 0.2;
+            const baseScore = (2 * periodStats.goals) + (1 * periodStats.primaryAssists) + (0.5 * periodStats.secondaryAssists) +
+                              (0.5 * periodStats.blocks) + (0.5 * periodStats.takeaways) + (0.2 * periodStats.hits) +
+                              (0.1 * periodStats.faceoffWins) + (0.5 * periodStats.penaltiesDrawn) - (0.5 * periodStats.penaltiesTaken) +
+                              (0.3 * periodStats.xGFor) - (0.3 * periodStats.xGAgainst) +
+                              (0.2 * periodStats.entries) + (0.15 * periodStats.exits) + 0.2;
 
             // Contextual Adjustments
             let clutchMultiplier = 1.0;
-            const isCloseGame = Math.abs(stats.period1GD) <= 1 || Math.abs(stats.period2GD) <= 1 || Math.abs(stats.period3GD) <= 1;
-            const isBlowout = Math.abs(stats.period1GD) >= 3 || Math.abs(stats.period2GD) >= 3 || Math.abs(stats.period3GD) >= 3;
-            const periodWeight = stats.period3GD !== 0 ? 0.2 : (stats.period2GD !== 0 ? 0.1 : 0);
-            clutchMultiplier += (0.2 * periodWeight) + (isCloseGame ? 0.3 : 0) - (isBlowout ? 0.2 : 0);
+            const isCloseGame = Math.abs(periodStats.gd) <= 1;
+            const isBlowout = Math.abs(periodStats.gd) >= 3;
+            const periodWeight = periodNumber === 1 ? 0 : periodNumber === 2 ? 0.1 : 0.2;
+            clutchMultiplier += (0.2 * periodWeight) + (isCloseGame ? 0.3 : 0) - (isBlowout ? 0.2 : 0) + (periodStats.critical ? 0.5 : 0);
 
-            const opponentMultiplier = 1.0 + (stats.opponentGD / 50);
+            const opponentMultiplier = 1.0 + (periodStats.opponentGD / 50);
 
             let roleMultiplier = 1.0;
-            if (stats.playerRole === 'defenseman') {
-                roleMultiplier += 0.2; // Boost for blocks, takeaways, xG Against
-            } else if (stats.playerRole === 'forward') {
-                roleMultiplier += 0.1; // Boost for goals, assists, xG For
+            if (periodStats.playerRole === 'defenseman') {
+                roleMultiplier += 0.2; // Boost for blocks, takeaways, xG Against, exits
+            } else if (periodStats.playerRole === 'forward') {
+                roleMultiplier += 0.1; // Boost for goals, assists, xG For, entries
             }
 
             // Efficiency Multiplier
-            const expectedBaseScore = stats.playerRole === 'defenseman' ? (stats.toi > 15 ? 1.2 : 0.8) : (stats.toi > 15 ? 1.5 : 1.0);
-            const toiAdjusted = stats.toi < 5 ? 5 : stats.toi; // Avoid division issues
+            const expectedBaseScore = periodStats.playerRole === 'defenseman' ? (periodStats.toi > 5 ? 0.4 : 0.27) : (periodStats.toi > 5 ? 0.5 : 0.33);
+            const toiAdjusted = periodStats.toi < 1 ? 1 : periodStats.toi; // Avoid division issues
             const efficiencyMultiplier = (baseScore / expectedBaseScore) * (60 / toiAdjusted);
 
-            const gameScore = (baseScore * clutchMultiplier * opponentMultiplier * roleMultiplier * efficiencyMultiplier).toFixed(2);
+            const periodScore = (baseScore * clutchMultiplier * opponentMultiplier * roleMultiplier * efficiencyMultiplier).toFixed(2);
+            console.log(`Period ${periodNumber} Score:`, periodScore);
+            return parseFloat(periodScore);
+        }
+
+        function calculateGameScore(stats) {
+            const period1Score = calculatePeriodScore({
+                gd: stats.period1GD,
+                critical: stats.period1Critical,
+                toi: stats.period1TOI,
+                goals: stats.period1Goals,
+                primaryAssists: stats.period1PrimaryAssists,
+                secondaryAssists: stats.period1SecondaryAssists,
+                blocks: stats.period1Blocks,
+                takeaways: stats.period1Takeaways,
+                hits: stats.period1Hits,
+                faceoffWins: stats.period1FaceoffWins,
+                penaltiesDrawn: stats.period1PenaltiesDrawn,
+                penaltiesTaken: stats.period1PenaltiesTaken,
+                xGFor: stats.period1XGFor,
+                xGAgainst: stats.period1XGAgainst,
+                entries: stats.period1Entries,
+                exits: stats.period1Exits,
+                opponentGD: stats.opponentGD,
+                playerRole: stats.playerRole
+            }, 1);
+
+            const period2Score = calculatePeriodScore({
+                gd: stats.period2GD,
+                critical: stats.period2Critical,
+                toi: stats.period2TOI,
+                goals: stats.period2Goals,
+                primaryAssists: stats.period2PrimaryAssists,
+                secondaryAssists: stats.period2SecondaryAssists,
+                blocks: stats.period2Blocks,
+                takeaways: stats.period2Takeaways,
+                hits: stats.period2Hits,
+                faceoffWins: stats.period2FaceoffWins,
+                penaltiesDrawn: stats.period2PenaltiesDrawn,
+                penaltiesTaken: stats.period2PenaltiesTaken,
+                xGFor: stats.period2XGFor,
+                xGAgainst: stats.period2XGAgainst,
+                entries: stats.period2Entries,
+                exits: stats.period2Exits,
+                opponentGD: stats.opponentGD,
+                playerRole: stats.playerRole
+            }, 2);
+
+            const period3Score = calculatePeriodScore({
+                gd: stats.period3GD,
+                critical: stats.period3Critical,
+                toi: stats.period3TOI,
+                goals: stats.period3Goals,
+                primaryAssists: stats.period3PrimaryAssists,
+                secondaryAssists: stats.period3SecondaryAssists,
+                blocks: stats.period3Blocks,
+                takeaways: stats.period3Takeaways,
+                hits: stats.period3Hits,
+                faceoffWins: stats.period3FaceoffWins,
+                penaltiesDrawn: stats.period3PenaltiesDrawn,
+                penaltiesTaken: stats.period3PenaltiesTaken,
+                xGFor: stats.period3XGFor,
+                xGAgainst: stats.period3XGAgainst,
+                entries: stats.period3Entries,
+                exits: stats.period3Exits,
+                opponentGD: stats.opponentGD,
+                playerRole: stats.playerRole
+            }, 3);
+
+            const gameScore = (period1Score + period2Score + period3Score).toFixed(2);
             console.log('Game Score:', gameScore);
             return gameScore;
         }
 
         function calculateMetrics(stats) {
             const gameScorePer60 = calculateGameScore(stats);
-            const xGPercent = (stats.xGFor + stats.xGAgainst) > 0 ? ((stats.xGFor / (stats.xGFor + stats.xGAgainst)) * 100).toFixed(1) : 0;
+            const totalXGFor = stats.period1XGFor + stats.period2XGFor + stats.period3XGFor;
+            const totalXGAgainst = stats.period1XGAgainst + stats.period2XGAgainst + stats.period3XGAgainst;
+            const xGPercent = (totalXGFor + totalXGAgainst) > 0 ? ((totalXGFor / (totalXGFor + totalXGAgainst)) * 100).toFixed(1) : 0;
             console.log('Metrics:', { gameScorePer60, xGPercent });
             return { gameScorePer60, xGPercent };
         }
@@ -193,33 +432,94 @@
                 opponentGD: parseInt(document.getElementById('opponentGD').value) || 0,
                 playerRole: document.getElementById('playerRole').value,
                 period1GD: parseInt(document.getElementById('period1GD').value) || 0,
-                period2GD: parseInt(document.getElementById('period2GD').value) || 0,
-                period3GD: parseInt(document.getElementById('period3GD').value) || 0,
-                goals: parseInt(document.getElementById('goals').value) || 0,
-                primaryAssists: parseInt(document.getElementById('primaryAssists').value) || 0,
-                secondaryAssists: parseInt(document.getElementById('secondaryAssists').value) || 0,
-                toi: parseFloat(document.getElementById('toi').value) || 0,
-                blocks: parseInt(document.getElementById('blocks').value) || 0,
-                takeaways: parseInt(document.getElementById('takeaways').value) || 0,
-                hits: parseInt(document.getElementById('hits').value) || 0,
-                faceoffWins: parseInt(document.getElementById('faceoffWins').value) || 0,
-                penaltiesDrawn: parseInt(document.getElementById('penaltiesDrawn').value) || 0,
-                penaltiesTaken: parseInt(document.getElementById('penaltiesTaken').value) || 0,
-                shotAttempts: parseInt(document.getElementById('shotAttempts').value) || 0,
-                shotsOnNet: parseInt(document.getElementById('shotsOnNet').value) || 0,
-                highDangerShots: parseInt(document.getElementById('highDangerShots').value) || 0,
-                shotAttemptsAgainst: parseInt(document.getElementById('shotAttemptsAgainst').value) || 0,
-                shotsOnNetAgainst: parseInt(document.getElementById('shotsOnNetAgainst').value) || 0,
-                highDangerShotsAgainst: parseInt(document.getElementById('highDangerShotsAgainst').value) || 0,
-                xGFor: calculateXG(
-                    parseInt(document.getElementById('shotAttempts').value) || 0,
-                    parseInt(document.getElementById('shotsOnNet').value) || 0,
-                    parseInt(document.getElementById('highDangerShots').value) || 0
+                period1Critical: document.getElementById('period1Critical').checked,
+                period1TOI: parseFloat(document.getElementById('period1TOI').value) || 0,
+                period1Goals: parseInt(document.getElementById('period1Goals').value) || 0,
+                period1PrimaryAssists: parseInt(document.getElementById('period1PrimaryAssists').value) || 0,
+                period1SecondaryAssists: parseInt(document.getElementById('period1SecondaryAssists').value) || 0,
+                period1Blocks: parseInt(document.getElementById('period1Blocks').value) || 0,
+                period1Takeaways: parseInt(document.getElementById('period1Takeaways').value) || 0,
+                period1Hits: parseInt(document.getElementById('period1Hits').value) || 0,
+                period1FaceoffWins: parseInt(document.getElementById('period1FaceoffWins').value) || 0,
+                period1PenaltiesDrawn: parseInt(document.getElementById('period1PenaltiesDrawn').value) || 0,
+                period1PenaltiesTaken: parseInt(document.getElementById('period1PenaltiesTaken').value) || 0,
+                period1ShotAttempts: parseInt(document.getElementById('period1ShotAttempts').value) || 0,
+                period1ShotsOnNet: parseInt(document.getElementById('period1ShotsOnNet').value) || 0,
+                period1HighDangerShots: parseInt(document.getElementById('period1HighDangerShots').value) || 0,
+                period1ShotAttemptsAgainst: parseInt(document.getElementById('period1ShotAttemptsAgainst').value) || 0,
+                period1ShotsOnNetAgainst: parseInt(document.getElementById('period1ShotsOnNetAgainst').value) || 0,
+                period1HighDangerShotsAgainst: parseInt(document.getElementById('period1HighDangerShotsAgainst').value) || 0,
+                period1Entries: parseInt(document.getElementById('period1Entries').value) || 0,
+                period1Exits: parseInt(document.getElementById('period1Exits').value) || 0,
+                period1XGFor: calculateXG(
+                    parseInt(document.getElementById('period1ShotAttempts').value) || 0,
+                    parseInt(document.getElementById('period1ShotsOnNet').value) || 0,
+                    parseInt(document.getElementById('period1HighDangerShots').value) || 0
                 ),
-                xGAgainst: calculateXG(
-                    parseInt(document.getElementById('shotAttemptsAgainst').value) || 0,
-                    parseInt(document.getElementById('shotsOnNetAgainst').value) || 0,
-                    parseInt(document.getElementById('highDangerShotsAgainst').value) || 0
+                period1XGAgainst: calculateXG(
+                    parseInt(document.getElementById('period1ShotAttemptsAgainst').value) || 0,
+                    parseInt(document.getElementById('period1ShotsOnNetAgainst').value) || 0,
+                    parseInt(document.getElementById('period1HighDangerShotsAgainst').value) || 0
+                ),
+                period2GD: parseInt(document.getElementById('period2GD').value) || 0,
+                period2Critical: document.getElementById('period2Critical').checked,
+                period2TOI: parseFloat(document.getElementById('period2TOI').value) || 0,
+                period2Goals: parseInt(document.getElementById('period2Goals').value) || 0,
+                period2PrimaryAssists: parseInt(document.getElementById('period2PrimaryAssists').value) || 0,
+                period2SecondaryAssists: parseInt(document.getElementById('period2SecondaryAssists').value) || 0,
+                period2Blocks: parseInt(document.getElementById('period2Blocks').value) || 0,
+                period2Takeaways: parseInt(document.getElementById('period2Takeaways').value) || 0,
+                period2Hits: parseInt(document.getElementById('period2Hits').value) || 0,
+                period2FaceoffWins: parseInt(document.getElementById('period2FaceoffWins').value) || 0,
+                period2PenaltiesDrawn: parseInt(document.getElementById('period2PenaltiesDrawn').value) || 0,
+                period2PenaltiesTaken: parseInt(document.getElementById('period2PenaltiesTaken').value) || 0,
+                period2ShotAttempts: parseInt(document.getElementById('period2ShotAttempts').value) || 0,
+                period2ShotsOnNet: parseInt(document.getElementById('period2ShotsOnNet').value) || 0,
+                period2HighDangerShots: parseInt(document.getElementById('period2HighDangerShots').value) || 0,
+                period2ShotAttemptsAgainst: parseInt(document.getElementById('period2ShotAttemptsAgainst').value) || 0,
+                period2ShotsOnNetAgainst: parseInt(document.getElementById('period2ShotsOnNetAgainst').value) || 0,
+                period2HighDangerShotsAgainst: parseInt(document.getElementById('period2HighDangerShotsAgainst').value) || 0,
+                period2Entries: parseInt(document.getElementById('period2Entries').value) || 0,
+                period2Exits: parseInt(document.getElementById('period2Exits').value) || 0,
+                period2XGFor: calculateXG(
+                    parseInt(document.getElementById('period2ShotAttempts').value) || 0,
+                    parseInt(document.getElementById('period2ShotsOnNet').value) || 0,
+                    parseInt(document.getElementById('period2HighDangerShots').value) || 0
+                ),
+                period2XGAgainst: calculateXG(
+                    parseInt(document.getElementById('period2ShotAttemptsAgainst').value) || 0,
+                    parseInt(document.getElementById('period2ShotsOnNetAgainst').value) || 0,
+                    parseInt(document.getElementById('period2HighDangerShotsAgainst').value) || 0
+                ),
+                period3GD: parseInt(document.getElementById('period3GD').value) || 0,
+                period3Critical: document.getElementById('period3Critical').checked,
+                period3TOI: parseFloat(document.getElementById('period3TOI').value) || 0,
+                period3Goals: parseInt(document.getElementById('period3Goals').value) || 0,
+                period3PrimaryAssists: parseInt(document.getElementById('period3PrimaryAssists').value) || 0,
+                period3SecondaryAssists: parseInt(document.getElementById('period3SecondaryAssists').value) || 0,
+                period3Blocks: parseInt(document.getElementById('period3Blocks').value) || 0,
+                period3Takeaways: parseInt(document.getElementById('period3Takeaways').value) || 0,
+                period3Hits: parseInt(document.getElementById('period3Hits').value) || 0,
+                period3FaceoffWins: parseInt(document.getElementById('period3FaceoffWins').value) || 0,
+                period3PenaltiesDrawn: parseInt(document.getElementById('period3PenaltiesDrawn').value) || 0,
+                period3PenaltiesTaken: parseInt(document.getElementById('period3PenaltiesTaken').value) || 0,
+                period3ShotAttempts: parseInt(document.getElementById('period3ShotAttempts').value) || 0,
+                period3ShotsOnNet: parseInt(document.getElementById('period3ShotsOnNet').value) || 0,
+                period3HighDangerShots: parseInt(document.getElementById('period3HighDangerShots').value) || 0,
+                period3ShotAttemptsAgainst: parseInt(document.getElementById('period3ShotAttemptsAgainst').value) || 0,
+                period3ShotsOnNetAgainst: parseInt(document.getElementById('period3ShotsOnNetAgainst').value) || 0,
+                period3HighDangerShotsAgainst: parseInt(document.getElementById('period3HighDangerShotsAgainst').value) || 0,
+                period3Entries: parseInt(document.getElementById('period3Entries').value) || 0,
+                period3Exits: parseInt(document.getElementById('period3Exits').value) || 0,
+                period3XGFor: calculateXG(
+                    parseInt(document.getElementById('period3ShotAttempts').value) || 0,
+                    parseInt(document.getElementById('period3ShotsOnNet').value) || 0,
+                    parseInt(document.getElementById('period3HighDangerShots').value) || 0
+                ),
+                period3XGAgainst: calculateXG(
+                    parseInt(document.getElementById('period3ShotAttemptsAgainst').value) || 0,
+                    parseInt(document.getElementById('period3ShotsOnNetAgainst').value) || 0,
+                    parseInt(document.getElementById('period3HighDangerShotsAgainst').value) || 0
                 )
             };
             console.log('Saving game data:', stats);
